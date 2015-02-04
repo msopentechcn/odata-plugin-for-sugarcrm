@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<configuration>
+    <services>
+      <service name="SugarCRM2.svc">
+          <path>\services\IDataServiceQueryProvider2 Implementation\SugarCRM\SugarCRMDataService.php</path>
+          <classname>SugarCRMDataService</classname>
+          <baseURL>/SugarCRM2.svc</baseURL>
+      </service>                    
+    </services>
+</configuration>
+
+

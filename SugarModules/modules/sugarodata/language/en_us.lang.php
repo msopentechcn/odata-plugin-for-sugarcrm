@@ -1,0 +1,27 @@
+<?php
+$mod_strings = array (
+  'LBL_ASSIGNED_TO_ID' => 'Assigned User Id',
+  'LBL_ASSIGNED_TO_NAME' => 'Assigned to',
+  'LBL_ID' => 'ID',
+  'LBL_TABLENAME' => 'Table Name',
+  'LBL_CREATED_USER' => 'Created by User',
+  'LBL_MODIFIED_USER' => 'Modified by User',
+  'LBL_LIST_FORM_TITLE' => 'Teams List',
+  'LBL_MODULE_NAME' => 'Sugarodata',
+  'LBL_MODULE_TITLE' => 'Sugarodata',
+  'LBL_HOMEPAGE_TITLE' => 'My Sugarodata',
+  'LNK_NEW_RECORD' => 'Create Sugarodata',
+  'LNK_LIST' => 'List Sugarodata',
+  'LNK_GENETATE' => 'Generate Sugarodata',
+  'LNK_ENABLE' => 'Enable Modules',
+  'LBL_CREATING_ODATA' => 'Creating SugarCRM Odata',
+  'LBL_DONE' => "Done!",
+  'LBL_SAVE_BUTTON' => "Update",
+  'LBL_SET_DEFAULT_SUGARODATA' => "Set Default Sugarodata",
+  'LBL_SUGARODATA_TABLENAME' => 'SugarOdata table name',
+  'LBL_SUGARODATA_ID' => 'SugarOdata table ID',
+  'LBL_ODATA_FILE_NOTEXISTS'=> 'SugarOdata configuration xml file not exists.',
+  'LBL_ODATA_LIST'=> 'Please see your SugarOdata list below.',    
+  'LBL_TABLENAME_LIST'=> 'your table names list.',    
+);
+?>
