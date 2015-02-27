@@ -10,20 +10,21 @@ if (!is_admin($current_user)) {
 echo $mod_strings['LBL_CREATING_ODATA'] . "<br>\n";
 ob_flush();
 
-//check sugarodata
+//check SugarOData
 $query = "select tablename from sugarodata where deleted = 0";
 $result = $db->query($query);
 
 
-//rebuild odata class source
+//rebuild OData class source
 $classfile = $_SERVER['DOCUMENT_ROOT'] . "/odata/services/IDataServiceQueryProvider2 Implementation/SugarCRM/newclass.php";
 $file = @fopen($classfile, "w+");
-$c = '';$tables = array();
+$c = '';
+$tables = array();
 while ($row = $db->fetchByAssoc($result)) {
     $tables[] = $row['tablename'];
     $c .= generateclass($classfile, $row['tablename'], $file);
 }
-//    print_r($c); 
+
 @fwrite($file, $c);
 @fclose($file);   
 echo $mod_strings['LBL_DONE']."<br>\n";

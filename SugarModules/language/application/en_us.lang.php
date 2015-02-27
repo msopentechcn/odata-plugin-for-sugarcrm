@@ -1,3 +1,3 @@
 <?php
 
-$app_list_strings['moduleList']['sugarodata'] = 'Sugarodata';
+$app_list_strings['moduleList']['sugarodata'] = 'SugarOData';

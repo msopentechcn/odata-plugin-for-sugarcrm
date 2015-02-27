@@ -12,13 +12,13 @@ $manifest = array(
     array(
         'CE'
     ),
-    'readme' => 'SugarCRM Odata intergration',
+    'readme' => 'SugarCRM OData intergration',
     'key' => 'sugarodata',
     'author' => 'MS Opentech',
-    'description' => 'SugarCRM Odata intergration',
+    'description' => 'SugarCRM OData intergration',
     'icon' => '',
     'is_uninstallable' => true,
-    'name' => 'SugarCRM Odata',
+    'name' => 'SugarCRM OData',
     'published_date' => '2014-12-05 08:00:00',
     'type' => 'module',
     'version' => '1.0',
@@ -26,7 +26,7 @@ $manifest = array(
 );
 
 $installdefs = array(
-    'id' => 'SugarOdata',
+    'id' => 'SugarOData',
     'beans' =>
     array(
         0 =>
