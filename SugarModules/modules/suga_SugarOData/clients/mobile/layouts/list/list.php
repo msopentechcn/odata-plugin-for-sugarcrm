@@ -1,4 +1,5 @@
 <?php
+ if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 /*
  * Your installation or use of this SugarCRM file is subject to the applicable
  * terms available at
@@ -9,6 +10,14 @@
  *
  * Copyright (C) SugarCRM Inc. All rights reserved.
  */
-
-$app_list_strings['moduleList']['suga_SugarOData'] = 'SugarOData';
-$app_list_strings['moduleListSingular']['suga_SugarOData'] = 'SugarOData';
+$module_name = 'suga_SugarOData';
+$viewdefs[$module_name]['mobile']['layout']['list'] = array(
+    'type' => 'list',
+    'components' =>
+    array(
+        0 =>
+        array(
+            'view' => 'list',
+        )
+    ),
+);

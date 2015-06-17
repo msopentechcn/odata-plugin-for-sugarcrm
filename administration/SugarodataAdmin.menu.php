@@ -2,7 +2,7 @@
 
 $admin_option_defs = array();
 $admin_option_defs['SugarodataAdmin'] = array(
-    'Sugarodata', 'LBL_SUGARODATA_ADMIN', 'LBL_SUGARODATA_ADMIN_DESCRIPTION', './index.php?module=sugarodata&action=index'
+    'Sugarodata', 'LBL_SUGARODATA_ADMIN', 'LBL_SUGARODATA_ADMIN_DESCRIPTION', 'index.php?entryPoint=generateOData'
 );
 
 // Loop through the menus and add to the Users group

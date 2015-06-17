@@ -9,6 +9,6 @@
  *
  * Copyright (C) SugarCRM Inc. All rights reserved.
  */
-
-$app_list_strings['moduleList']['suga_SugarOData'] = 'SugarOData';
-$app_list_strings['moduleListSingular']['suga_SugarOData'] = 'SugarOData';
+/**
+ * This file adds support for studio
+ */
