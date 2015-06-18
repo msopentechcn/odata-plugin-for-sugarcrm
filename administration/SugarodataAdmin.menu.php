@@ -25,4 +25,3 @@ if (!$tmp_menu_set) {
         $admin_group_header[] = array('SUGARODATA_ADMIN_TITLE', '', false, array('Administration' => $admin_option_defs), 'SUGARODATA_ADMIN_DESC');
     }
 }
-?>

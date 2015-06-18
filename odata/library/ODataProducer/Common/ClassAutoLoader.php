@@ -115,7 +115,7 @@ class ClassAutoLoader
      */
     public function autoLoadNonWindows($classPath)
     {
-        $classPath = str_replace("\\", "/", $classPath);
+        $classPath = dirname(__FILE__)."/../../".str_replace("\\", "/", $classPath);
         include_once $classPath . self::FILEEXTENSION;
     }
 }

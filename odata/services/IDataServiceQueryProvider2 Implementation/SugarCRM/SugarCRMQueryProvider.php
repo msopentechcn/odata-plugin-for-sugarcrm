@@ -19,7 +19,6 @@ use ODataProducer\Providers\Metadata\ResourceProperty;
 use ODataProducer\Providers\Query\IDataServiceQueryProvider2;
 use ODataProducer\Common\ODataException;
 require_once "SugarCRMMetadata.php";
-require_once "ODataProducer/Providers/Query/IDataServiceQueryProvider2.php";
 
 
 /**
@@ -107,11 +106,11 @@ class SugarCRMQueryProvider implements IDataServiceQueryProvider2
         $returnResult = array();
         
         //sugarodata record deleted =0
-        $sql = "select tablename from sugarodata where deleted =0 order by id asc";
+        $sql = "select name from suga_sugarodata where deleted =0 order by id asc";
         $res = mysql_query($sql);
         while ($record = mysql_fetch_array($res, MYSQL_ASSOC)) {
             //get odata tables
-            $tables[] = $record['tablename']; 
+            $tables[] = $record['name'];
         }
 
         if (!empty($tables) && in_array(strtolower($resourceSetName), $tables)) {     

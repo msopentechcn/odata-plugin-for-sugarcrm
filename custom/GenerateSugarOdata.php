@@ -1,6 +1,6 @@
 <?php
 
-global $db, $current_user;
+global $db, $current_user, $sugar_config;
 
 if (!is_admin($current_user)) {
     sugar_die("Unauthorized access to administration.");
@@ -21,6 +21,7 @@ $file = fopen($classfile, "w+");
 $c = '';
 $tables = array();
 while ($row = $db->fetchByAssoc($result)) {
+    echo "generate.";
     $tables[] = $row['name'];
     $c .= generateclass($classfile, $row['name'], $file);
 }
@@ -31,7 +32,7 @@ echo "Done.<br>\n";
 if(!empty($tables)) {
     echo "OData Table<br>\n";
     foreach($tables as $k => $val) {
-        echo "<a href='http://".$_SERVER['HTTP_HOST'].'/custom/odata/SugarCRM2.svc/'.ucfirst($val)."' target='_blank'>http://".$_SERVER['HTTP_HOST'].'/custom/odata/SugarCRM2.svc/'.ucfirst($val)."</a><br>\n";
+        echo "<a href='custom/odata/SugarCRM2.svc/".ucfirst($val)."' target='_blank'>custom/odata/SugarCRM2.svc/".ucfirst($val)."</a><br>\n";
     }
 }
 
@@ -44,7 +45,7 @@ function generateclass($filename, $table, $file) {
     $contents = @fread($file, filesize($filename));
     if(strlen($contents) > 0) {
         $c .= $contents;
-    } 
+    }
     $c .= "<?php
 
 class $table
