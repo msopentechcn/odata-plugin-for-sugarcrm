@@ -1,5 +1,16 @@
 # OData-plugin-for-SugarCRM #
 
+##Note from Matt
+I've modified the plug-in to work with Sugar 7.
+
+1) This can only be installed on-site since it writes to a PHP file on disk during the generation phase where it creates some PHP classes the represents Sugar Modules to be used in OData connector.  I don't see need for this because Sugar metadata already includes this information and could be retrieved on demand.  I think we could refactor the plug-in so that it doesn't generate PHP code.
+
+2) There's an .htaccess file under the odata directory that needs to be updated for your local install.  Ideally this should be generated during an install process like the Sugar application's .htaccess file.  And again, this would prevent this from being used in Sugar OnDemand.
+
+3) Touching the "List SugarOData" button in Admin panel will trigger OData generation.  The SugarOData module is a regular user module.  You create records in there where the name matches the table name you want to use with OData provider.  Again, this needs to change in future.
+
+4) This plug-in queries MySQL directly which bypasses security and vardefs / view metadata.  This is the biggest thing that needs to change - it should be driven via SugarQuery and SugarBean instead.
+
 
 add OData v2 producer support for SugarCRM
 ## Installation ##
