@@ -1,4 +1,6 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
+  RewriteBase /~mmarum/ent/sugarcrm/custom/odata
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule ^ Index.php [L]
+  RewriteRule ^ Index.php
+</IfModule>

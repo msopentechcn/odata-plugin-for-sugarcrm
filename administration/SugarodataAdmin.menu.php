@@ -2,7 +2,7 @@
 
 $admin_option_defs = array();
 $admin_option_defs['SugarodataAdmin'] = array(
-    'Sugarodata', 'LBL_SUGARODATA_ADMIN', 'LBL_SUGARODATA_ADMIN_DESCRIPTION', './index.php?module=sugarodata&action=index'
+    'Sugarodata', 'LBL_SUGARODATA_ADMIN', 'LBL_SUGARODATA_ADMIN_DESCRIPTION', 'index.php?entryPoint=generateOData'
 );
 
 // Loop through the menus and add to the Users group
@@ -25,4 +25,3 @@ if (!$tmp_menu_set) {
         $admin_group_header[] = array('SUGARODATA_ADMIN_TITLE', '', false, array('Administration' => $admin_option_defs), 'SUGARODATA_ADMIN_DESC');
     }
 }
-?>

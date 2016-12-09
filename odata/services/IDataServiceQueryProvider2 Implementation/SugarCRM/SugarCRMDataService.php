@@ -16,15 +16,13 @@
  */
 use ODataProducer\Configuration\EntitySetRights;
 
-require_once 'ODataProducer/IDataService.php';
-require_once 'ODataProducer/IRequestHandler.php';
-require_once 'ODataProducer/DataService.php';
-require_once 'ODataProducer/IServiceProvider.php';
+use ODataProducer\IDataService;
+use ODataProducer\IRequestHandler;
+use ODataProducer\DataService;
+use ODataProducer\IServiceProvider;
 
 use ODataProducer\Configuration\DataServiceProtocolVersion;
 use ODataProducer\Configuration\DataServiceConfiguration;
-use ODataProducer\IServiceProvider;
-use ODataProducer\DataService;
 use ODataProducer\OperationContext\DataServiceHost;
 use ODataProducer\Common\ODataException;
 use ODataProducer\Common\ODataConstants;
@@ -107,5 +105,3 @@ class SugarCRMDataService extends DataService implements IServiceProvider {
     // private memeber variable DataService::_dataServiceHost is not accessible in this class,
     // so we are using getHost() below.
 }
-
-?>

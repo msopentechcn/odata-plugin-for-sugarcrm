@@ -25,7 +25,6 @@ use ODataProducer\Providers\Metadata\ResourceTypeKind;
 use ODataProducer\Providers\Metadata\ResourceType;
 use ODataProducer\Common\InvalidOperationException;
 use ODataProducer\Providers\Metadata\IDataServiceMetadataProvider;
-require_once 'ODataProducer/Providers/Metadata/IDataServiceMetadataProvider.php';
 use ODataProducer\Providers\Metadata\ServiceBaseMetadata;
 use ODataProducer\Providers\Metadata\MetadataMapping;
 
@@ -43,7 +42,8 @@ use ODataProducer\Providers\Metadata\MetadataMapping;
  * @link      http://odataphpproducer.codeplex.com
  */
 require_once 'newclass.php';
-include $_SERVER['DOCUMENT_ROOT']."/config.php";
+include "../../../../../config.php";
+
         
 /** The name of the database for SugarCRM */
 define('DB_NAME', $sugar_config['dbconfig']['db_name']);
@@ -129,15 +129,18 @@ class CreateSugarCRMMetadata
     public static function generateMetadata($metadata) {
         $link = @mysql_connect(DB_HOST, DB_USER, DB_PASSWORD, true) or die(print_r(mysql_error(), true));
         mysql_select_db(DB_NAME, $link);
-        $sql = "select tablename from sugarodata where deleted =0 order by date_entered asc";
+        $sql = "select name from suga_sugarodata where deleted =0 order by date_entered asc";
         $res = mysql_query($sql);
+        $tables = array();
+        if(!$res){
+            return $metadata;
+        }
         while ($record = mysql_fetch_array($res, MYSQL_ASSOC)) {
             //get odata tables
-            $tables[] = $record['tablename'];
+            $tables[] = $record['name'];
         }
         
         foreach ($tables as $k => $v) {
-            $$var = '';
             $var = ucfirst($v).'EntityType';
             $$var = $metadata->addEntityType(new ReflectionClass(ucfirst($v)), ucfirst($v), 'SugarCRM');
             
@@ -170,6 +173,3 @@ class CreateSugarCRMMetadata
     }
        
 }
-
-
-?>

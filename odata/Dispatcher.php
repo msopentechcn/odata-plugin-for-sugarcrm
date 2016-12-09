@@ -141,7 +141,7 @@ class Dispatcher
     public function dispatch()
     {
         $dataService = null;
-        include_once $_SERVER['DOCUMENT_ROOT'].'/odata'.str_replace("\\", "/", $this->_serviceInfo['SERVICE_PATH']);
+        include_once dirname(__FILE__) . "/" . str_replace("\\", "/", $this->_serviceInfo['SERVICE_PATH']);
         try {
             $reflectionClass = new \ReflectionClass($this->_serviceInfo['SERVICE_CLASS']);
             $dataService = $reflectionClass->newInstance();
@@ -225,4 +225,3 @@ class Dispatcher
         echo $outGoingResponse->getStream();
     }
 }
-?>
